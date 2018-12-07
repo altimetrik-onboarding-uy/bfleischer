@@ -1,0 +1,17 @@
+Dear {!Contact.FirstName},
+
+A Work Item has been assigned to you:
+
+Name:
+{!Work_Item__c.Name}
+Title:
+{!Work_Item__c.Title}
+Description:
+{!Work_Item__c.Description}
+
+For further information, access the next link:
+{!Work_Item__c.Link}
+
+
+Regards, 
+{!User.Name}

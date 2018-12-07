@@ -1,0 +1,6 @@
+<aura:component>
+    <aura:attribute name="workItemsStatus" type="String" />
+    <aura:attribute name="workItemsList" type="Work_Item__c[]" />
+
+
+</aura:component>

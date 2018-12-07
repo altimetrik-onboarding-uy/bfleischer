@@ -1,0 +1,31 @@
+{
+    "projectName": "b-fliescher-projekt",
+    "username": "bfleischer@altimetrik.com",
+    "id": "46322e60-f96f-11e8-bc00-73562c52ea31",
+    "namespace": "",
+    "orgType": "developer",
+    "loginUrl": "https://login.salesforce.com/",
+    "instanceUrl": "https://b-fleischer-projekt-dev-ed.my.salesforce.com",
+    "workspace": "C:\\Users\\bfleischer\\Documents",
+    "subscription": [
+        "ApexClass",
+        "ApexComponent",
+        "ApexPage",
+        "ApexTrigger",
+        "AuraDefinitionBundle",
+        "CustomApplication",
+        "CustomApplicationComponent",
+        "CustomMetadata",
+        "CustomObject",
+        "CustomTab",
+        "Document",
+        "EmailTemplate",
+        "Flow",
+        "FlowDefinition",
+        "Layout",
+        "Report",
+        "ReportType",
+        "StaticResource",
+        "Workflow"
+    ]
+}
