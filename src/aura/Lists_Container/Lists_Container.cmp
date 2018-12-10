@@ -1,1 +1,42 @@
-<aura:component></aura:component>
+<aura:component controller="WorkItemsLast30DaysController" access="global" implements="force:appHostable,flexipage:availableForAllPageTypes">
+
+<aura:attribute name="workItemStatus" type="String[]" default="['New', 'Ready', 'In Progress', 'Done']" />
+
+    <!-- HEADER-->
+    <div class="slds-page-header slds-m-bottom--small" role="banner">
+        <div class="slds-media slds-media--center">
+            <div class="slds-media__body">
+                <p class="slds-page-header__title slds-truncate slds-align-middle slds-text-heading--large">
+                    <strong><i class="fa fa-th" aria-hidden="true"></i>&nbsp;Work Items Kanban</strong>
+                </p>
+                <p class="slds-text-body--small page-header__info">
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- COLUMN HEADERS -->
+    <div class="slds-grid">
+        <div class="slds-tabs--path" role="application">
+            <ul class="slds-tabs--path__nav" role="tablist">
+                <aura:iteration items="{!v.workItemStatus}" var="status">
+                    <li class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+                        <a class="slds-tabs--path__link" tabindex="-1" role="tab" href="javascript:void(0);">
+                            <span class="slds-tabs--path__title slds-text-heading--medium">{!status}</span>
+                        </a>
+                    </li>
+                </aura:iteration>
+            </ul>
+        </div>
+    </div>
+
+    <!-- COLUMNS -->
+    <div class="slds-grid">
+        <aura:iteration items="{!v.workItemStatus}" var="status">
+            <div class="slds-col slds-size--3-of-12 slds-has-dividers--around-space slds-scrollable--y">
+                <c:Work_Items_List workItemsStatus="{!status}" />
+            </div>
+        </aura:iteration>
+    </div>
+
+</aura:component>

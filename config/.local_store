@@ -36,7 +36,7 @@
         "id": "0Ad1U000000SptgSAC",
         "lastModifiedById": "0051U000000f7RcQAI",
         "lastModifiedByName": "Bruno Fleischer",
-        "lastModifiedDate": "2018-12-07T17:40:28.000Z",
+        "lastModifiedDate": "2018-12-07T19:03:20.000Z",
         "manageableState": "unmanaged",
         "type": "AuraDefinitionBundle",
         "mmState": "clean"
@@ -78,7 +78,7 @@
         "id": "0Ad1U000000SptbSAC",
         "lastModifiedById": "0051U000000f7RcQAI",
         "lastModifiedByName": "Bruno Fleischer",
-        "lastModifiedDate": "2018-12-07T17:56:03.000Z",
+        "lastModifiedDate": "2018-12-07T19:43:13.000Z",
         "manageableState": "unmanaged",
         "type": "AuraDefinitionBundle",
         "mmState": "clean"
@@ -148,7 +148,7 @@
         "id": "0Ad1U000000Sq1DSAS",
         "lastModifiedById": "0051U000000f7RcQAI",
         "lastModifiedByName": "Bruno Fleischer",
-        "lastModifiedDate": "2018-12-07T17:55:10.000Z",
+        "lastModifiedDate": "2018-12-07T19:25:49.000Z",
         "manageableState": "unmanaged",
         "type": "AuraDefinitionBundle",
         "mmState": "clean"
@@ -204,7 +204,7 @@
         "id": "0Ad1U000000SptvSAC",
         "lastModifiedById": "0051U000000f7RcQAI",
         "lastModifiedByName": "Bruno Fleischer",
-        "lastModifiedDate": "2018-12-07T17:41:33.000Z",
+        "lastModifiedDate": "2018-12-07T19:40:30.000Z",
         "manageableState": "unmanaged",
         "type": "AuraDefinitionBundle",
         "mmState": "clean"
@@ -420,15 +420,17 @@
         "mmState": "clean"
     },
     "WorkItemsLast30DaysController.cls": {
-        "createdById": "0051U000000f7RcQAI",
-        "createdByName": "Bruno Fleischer",
-        "createdDate": "2018-12-07T17:46:57.000Z",
-        "fileName": "unpackaged/classes/WorkItemsLast30DaysController.cls",
-        "fullName": "WorkItemsLast30DaysController",
         "id": "01p1U000005KtPWQA0",
+        "name": "WorkItemsLast30DaysController",
+        "createdDate": "2018-12-07T17:46:57.000+0000",
+        "createdById": "0051U000000f7RcQAI",
+        "namespacePrefix": null,
         "lastModifiedById": "0051U000000f7RcQAI",
+        "lastModifiedDate": "2018-12-07T20:47:03.000+0000",
+        "fullName": "WorkItemsLast30DaysController",
+        "fileName": "unpackaged/classes/WorkItemsLast30DaysController.cls",
+        "createdByName": "Bruno Fleischer",
         "lastModifiedByName": "Bruno Fleischer",
-        "lastModifiedDate": "2018-12-07T17:51:06.000Z",
         "manageableState": "unmanaged",
         "type": "ApexClass",
         "mmState": "clean"
