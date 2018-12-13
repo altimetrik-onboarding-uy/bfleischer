@@ -1,7 +1,6 @@
-<aura:component controller="WorkItemsLast30DaysController" access="global" implements="force:appHostable,flexipage:availableForAllPageTypes">
+<aura:component controller="WorkItemsLast30DaysController" access="global" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId">
 
 <aura:attribute name="workItemStatus" type="String[]" default="['New', 'Ready', 'In Progress', 'Done']" />
-
     <!-- HEADER-->
     <div class="slds-page-header slds-m-bottom--small" role="banner">
         <div class="slds-media slds-media--center">
@@ -29,14 +28,12 @@
             </ul>
         </div>
     </div>
-
     <!-- COLUMNS -->
     <div class="slds-grid">
         <aura:iteration items="{!v.workItemStatus}" var="status">
             <div class="slds-col slds-size--3-of-12 slds-has-dividers--around-space slds-scrollable--y">
-                <c:Work_Items_List workItemsStatus="{!status}" />
+                <c:Work_Items_List workItemsStatus="{!status}" contactRecordId="{!v.recordId}" />
             </div>
         </aura:iteration>
     </div>
-
 </aura:component>

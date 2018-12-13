@@ -21,14 +21,14 @@
             <div class="slds-media__figure">
                 <span class="slds-icon_container slds-icon-standard-account" title="workItem">
                     <lightning:icon 
-                        iconName="{!equals(v.item.Item_Type__c, 'Idea') ? 'action:edit' : (equals(v.item.Status__c, 'Fix') ? 'action:refresh' : 'action:announcement')}" 
+                        iconName="{!equals(v.item.Item_Type__c, 'Idea') ? 'action:edit' : (equals(v.item.Item_Type__c, 'Fix') ? 'action:refresh' : 'action:announcement')}" 
                         size="large"/>
                 </span>
             </div>
             <div class="slds-media__body">
                 
-                <h2 class="slds-card__header-title">
-                    <a href="javascript:void(0)" onclick="{!c.editWorkItem}" class="slds-card__header-link slds-truncate" title="Work Items" data-id="{!v.item.Id}">
+                <h2 class="slds-card__header-title slds-truncate">
+                    <a href="javascript:void(0)" onclick="{!c.editWorkItem}" class="slds-card__header-link" title="Work Items" data-id="{!v.item.Id}">
                         {!v.item.Title__c}
                     </a>
                 </h2>
