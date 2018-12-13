@@ -4,6 +4,8 @@
 		<members>WorkItemsLast30DaysController</members>
 		<members>WorkItemsOverdue</members>
 		<members>WorkItemsOverdueTest</members>
+		<members>WorkItemsLast30DaysControllerTest</members>
+		<members>WorkItemsBatch</members>
 		<name>ApexClass</name>
 	</types>
 	<types>

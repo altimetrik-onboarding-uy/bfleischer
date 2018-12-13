@@ -1,47 +1,46 @@
 @isTest
 private class WorkItemsOverdueTest {
 
-	// Dummy CRON expression: midnight on March 15.
-	public static String CRON_EXP = '0 0 0 15 3 ? 2022';
+	@isTest static void test_itemsOverDue() {
+		List<Work_Item__c> workItems = new List<Work_Item__c>();
+		Date estimatedEndDate = Date.newInstance(2010, 10, 10);
+		for(Integer i = 0; i < 10; i++){
+			workItems.add(new Work_Item__c(
+				Item_Type__c = 'Idea',
+				Estimated_End_Date__c = estimatedEndDate
+			));
+		}
+		insert workItems;
 
-	@isTest static void test_method_one() {
-		
-		// List<Work_Item__c> dummyWI = new List<Work_Item__c>();
-		// Date estimatedEndDate = Date.newInstance(2010, 10, 10);
-		// for(Integer i = 0; i < 40; i++){
-		// 	Work_Item__c WI = new Work_Item__c(
-		// 			Item_Type__c = ''+i,
-		// 			Estimated_End_Date__c = estimatedEndDate
-		// 		);
-		// 	dummyWI.add(WI);
-		// }
-		// insert dummyWI;
-        
-        // // Get the IDs of the WI we just inserted
-        // Map<Id, Work_Item__c> dummyWIMap = new Map<Id, Work_Item__c>(dummyWI);
-        // List<Id> dummyWIIds = new List<Id>(dummyWIMap.keySet());
-        // Test.startTest();
-        // // Schedule the test job
-        // String jobId = System.schedule('ScheduledApexTest',
-        //     CRON_EXP, 
-        //     new WorkItemsOverdueTest());         
-        // // Verify the scheduled job has not run yet.
-        // List<Task> lt = [SELECT Id 
-        //     FROM Task 
-        //     WHERE WhatId IN :dummyWIIds];
-        // System.assertEquals(0, lt.size(), 'Tasks exist before job has run');
-        // // Stopping the test will run the job synchronously
-        // Test.stopTest();
-        
-        // // Now that the scheduled job has executed,
-        // // check that our tasks were created
-        // lt = [SELECT Id 
-        //     FROM Task 
-        //     WHERE WhatId IN :dummyWIIds];
-        // System.assertEquals(dummyWIIds.size(), 
-        //     lt.size(), 
-        //     'Tasks were not created');
+		WorkItemsOverdue workItemsOverdueClass = new WorkItemsOverdue();
+		Integer quantityOfItemsOverdue = workItemsOverdueClass.getItemsOverdue();
+
+		System.assertEquals(10, quantityOfItemsOverdue);
 
 	}
 	
+	@isTest static void test_plainEmailBody(){
+		WorkItemsOverdue workItemsOverdueClass = new WorkItemsOverdue();
+		String plainBody = workItemsOverdueClass.getPlainBody(10);
+
+		System.assertEquals('The quantity of Work Items overdue is 10', plainBody);
+	}
+
+	@isTest static void test_htmlEmailBody(){
+
+		WorkItemsOverdue workItemsOverdueClass = new WorkItemsOverdue();
+		String plainBody = workItemsOverdueClass.getHtmlBody(10);
+
+		System.assertEquals('<body><p>Dear Organization Administrator,</p>'
+						+'<br/><p>The quantity of Work Items overdue is: 10.</p>'
+						+'<br/><p>Kind regards,</p><p>System Administrator</p>', plainBody);
+	}
+	@isTest static void test_EmailJob(){
+		String sch = '0 00 01 * * ?';
+		test.startTest();
+		String jobId = System.schedule('ScheduledApexTest', sch, new WorkItemsOverdue());
+		System.assert(jobId != null);
+		test.stopTest();
+	}
+
 }

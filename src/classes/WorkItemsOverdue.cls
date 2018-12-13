@@ -16,10 +16,12 @@ global class WorkItemsOverdue implements Schedulable {
 		Messaging.sendEmail(new Messaging.SingleEmailMessage[] { mailToSend });
 	}
 
+	@TestVisible
 	private String getPlainBody(Integer itemsOverdue){
 		return 'The quantity of Work Items overdue is ' + itemsOverdue;
 	}
 
+	@TestVisible
 	private String getHtmlBody(Integer itemsOverdue){
 		String header = '<body><p>Dear Organization Administrator,</p>';
 		String body = '<br/><p>The quantity of Work Items overdue is: ' + itemsOverdue + '.</p>';
@@ -27,6 +29,7 @@ global class WorkItemsOverdue implements Schedulable {
 		return header + body + footer;
 	}
 
+	@TestVisible
 	private Integer getItemsOverdue(){
 		List<AggregateResult> itemsOverdue = [SELECT COUNT(Id) quantity FROM Work_Item__c 
 												WHERE Estimated_End_Date__c < TODAY];
